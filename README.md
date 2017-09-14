@@ -25,20 +25,20 @@ id = nanoid.generate()
 
 Change ID length
 
-``` pythonma
+``` python
 id = nanoid.generate(size=3)
 ```
 
 Change ID alphabet
 
 ``` python
-id = nanoid.generate(alphabet="abcde12345")
+id = nanoid.generate(alphabet="1234567890abcdef")
 ```
 
 Change ID length and alphabet
 
 ``` python
-nanoid.generate(alphabet="abcde12345", size="3")
+nanoid.generate(alphabet="1234567890abcdef", size="3")
 ```
 
 
@@ -49,4 +49,4 @@ nanoid.generate(alphabet="abcde12345", size="3")
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
