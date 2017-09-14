@@ -7,31 +7,38 @@ This is python's copy of [nanoid](https://github.com/ai/nanoid)!
 **Compact.** It uses more symbols than UUID (`A-Za-z0-9_~`)
 and has the same number of unique options in just 22 symbols instead of 36.
 
+##  Install
+
+```
+pip install nanoid
+```
+
+
 ## Usage
 
 Generate ID using defaults
 
 ``` python
 import nanoid
-id = nanoid()
+id = nanoid.generate()
 ```
 
 Change ID length
 
-``` python
-id = nanoid(size=3)
+``` pythonma
+id = nanoid.generate(size=3)
 ```
 
 Change ID alphabet
 
 ``` python
-id = nanoid(alphabet="abcde12345")
+id = nanoid.generate(alphabet="abcde12345")
 ```
 
 Change ID length and alphabet
 
 ``` python
-nanoid(alphabet="abcde12345", size="3")
+nanoid.generate(alphabet="abcde12345", size="3")
 ```
 
 
