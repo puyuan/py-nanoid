@@ -1,20 +1,12 @@
 from os import urandom
 import math
 
-def nanoid(alphabet='_~0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', size=22):
-    """
-    Create a nanoid with prefilled defaults
-    :param alphabet:
-    :param size:
-    :return:
-    """
-    return format(alphabet, size)
 
-def format(alphabet, size):
+def generate(alphabet='_~0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', size=22):
     """
-    Create a random id from alphabet and size
-    :param alphabet:
-    :param size:
+    Create a nanoid
+    :param alphabet: optional, specify the alphabets for id generation
+    :param size: optional,  specify the size of the id
     :return:
     """
     masks = [15, 31, 63, 127, 255]
@@ -23,7 +15,7 @@ def format(alphabet, size):
         if m >= len(alphabet) - 1:
             mask = m
             break
-    step = math.ceil(1.6*mask*size/len(alphabet))
+    step = math.ceil(1.6 * mask * size / len(alphabet))
     id = ""
     while True:
         random_bytes = urandom(step)
@@ -36,5 +28,5 @@ def format(alphabet, size):
 
 
 if __name__ == "__main__":
-    print(nanoid(size=3))
+    print(generate())
 
