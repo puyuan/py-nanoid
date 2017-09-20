@@ -1,3 +1,5 @@
+from __future__ import unicode_literals
+from __future__ import division
 from os import urandom
 import math
 
@@ -15,10 +17,10 @@ def generate(alphabet='_~0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRS
         if m >= len(alphabet) - 1:
             mask = m
             break
-    step = math.ceil(1.6 * mask * size / len(alphabet))
+    step = int(math.ceil(1.6 * mask * size / len(alphabet)))
     id = ""
     while True:
-        random_bytes = urandom(step)
+        random_bytes = bytearray(urandom(step))
         for i in range(step):
             byte = random_bytes[i] & mask
             if alphabet[byte]:
