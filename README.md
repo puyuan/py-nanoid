@@ -38,7 +38,7 @@ id = nanoid.generate(alphabet="1234567890abcdef")
 Change ID length and alphabet
 
 ``` python
-nanoid.generate(alphabet="1234567890abcdef", size="3")
+nanoid.generate(alphabet="1234567890abcdef", size=3)
 ```
 
 
