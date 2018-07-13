@@ -50,3 +50,7 @@ nanoid.generate(alphabet="1234567890abcdef", size=3)
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
+
+## Change Log
+
+1. v0.3.0 - Fix array out of bound error.
