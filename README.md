@@ -1,5 +1,8 @@
 # Python Nanoid
 
+[![CircleCI](https://circleci.com/gh/puyuan/py-nanoid/tree/master.svg?style=svg)](https://circleci.com/gh/puyuan/py-nanoid/tree/master)
+
+
 A tiny, secure, URL-friendly, unique string ID generator for Python.
 
 This is python's implementation of [nanoid](https://github.com/ai/nanoid)!
