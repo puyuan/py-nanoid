@@ -1,11 +1,14 @@
 # Python Nanoid
 
-This is python's copy of [nanoid](https://github.com/ai/nanoid)!
+A tiny, secure, URL-friendly, unique string ID generator for Python.
 
-**Safe.** It uses cryptographically strong random generator ([urandom](https://docs.python.org/3/library/os.html#os.urandom)).
+This is python's implementation of [nanoid](https://github.com/ai/nanoid)!
 
-**Compact.** It uses more symbols than UUID (`A-Za-z0-9_~`)
-and has the same number of unique options in just 22 symbols instead of 36.
+
+* **Safe.** It uses cryptographically strong random generator. ([urandom](https://docs.python.org/3/library/os.html#os.urandom)).
+
+* **Compact.** It uses a larger alphabet than UUID (`A-Za-z0-9_-`).
+So ID size was reduced from 36 to 21 symbols.
 
 ##  Install
 
@@ -41,6 +44,12 @@ Change ID length and alphabet
 nanoid.generate(alphabet="1234567890abcdef", size=3)
 ```
 
+Support for Non-secure random generator
+
+```python
+nanoid.generate(secure=False)
+```
+
 
 ## Credits
 
@@ -53,4 +62,9 @@ The MIT License (MIT). Please see [License File](LICENSE) for more information.
 
 ## Change Log
 
-1. v0.3.0 - Fix array out of bound error.
+1. v0.3.0 
+    - Fix array out of bound error.
+2. v2.0.0 
+    -  Replace ~ to - in default alphabet
+    - Add non-secure fast generator
+    - Reduce default characters from 22 to 21
