@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='nanoid',
-      version='0.3.0',
+      version='2.0.0',
       description='Python nanoid implementation',
       url='https://github.com/puyuan/py-nanoid',
       author='Paul Yuan',
