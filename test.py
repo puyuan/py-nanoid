@@ -2,6 +2,7 @@ from unittest import TestCase
 
 from nanoid import generate
 
+
 class TestNanoId(TestCase):
     def test_secure_ids(self):
         for i in range(10000):

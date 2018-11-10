@@ -8,7 +8,8 @@ import random
 from os import urandom
 
 
-def generate(alphabet='_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', size=21, secure=True):
+def generate(alphabet='_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+             size=21, secure=True):
     if secure:
         return _generate_secure(alphabet, size)
     else:
