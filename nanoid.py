@@ -10,6 +10,12 @@ from os import urandom
 
 def generate(alphabet='_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
              size=21, secure=True):
+    """Create a nanoid
+    :param alphabet: optional, specify the alphabets for Nano ID generation
+    :param size: optional, specify the size of the Nano ID
+    :param secure: optional, boolean. The non-secure one uses pseudo-random generators.
+    :return: Nano ID string
+    """
     if secure:
         return _generate_secure(alphabet, size)
     else:
@@ -17,12 +23,6 @@ def generate(alphabet='_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRS
 
 
 def _generate_secure(alphabet, size):
-    """
-    Create a nanoid
-    :param alphabet: optional, specify the alphabets for Nano ID generation
-    :param size: optional, specify the size of the Nano ID
-    :return: Nano ID string
-    """
     if not alphabet:
         return ''
     if size < 1:

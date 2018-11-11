@@ -65,9 +65,9 @@ The MIT License (MIT). Please see [License File](LICENSE) for more information.
 
 ## Change Log
 
-1. v0.3.0 
-    - Fix array out of bound error.
-2. v2.0.0 
+- v2.0.0 
     -  Replace ~ to - in default alphabet
     - Add non-secure fast generator
-    - Reduce default characters from 22 to 21
+    - Reduce default characters from 22 to 21 
+- v0.3.0 
+    - Fix array out of bound error.
