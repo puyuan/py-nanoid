@@ -1,56 +1,72 @@
-# Python Nanoid
+# Nano ID
 
-This is python's copy of [nanoid](https://github.com/ai/nanoid)!
+A tiny, secure, URL-friendly, unique string ID generator for Python. Original implementation's repository: [https://github.com/ai/nanoid](https://github.com/ai/nanoid).
 
-**Safe.** It uses cryptographically strong random generator ([urandom](https://docs.python.org/3/library/os.html#os.urandom)).
-
-**Compact.** It uses more symbols than UUID (`A-Za-z0-9_~`)
-and has the same number of unique options in just 22 symbols instead of 36.
-
-##  Install
-
-```
-pip install nanoid
-```
-
+* __Safe__. It uses cryptographically strong random APIs and tests distribution of symbols.
+* __Compact__. It uses a larger alphabet than UUID (A-Za-z0-9_-). So ID size was reduced from 36 to 21 symbols.
 
 ## Usage
 
-Generate ID using defaults
+Install Nano ID using pip:
 
-``` python
+`pip install nanoid`
+
+### Normal
+
+The main module uses URL-friendly symbols (A-Za-z0-9_-) and returns an ID with 21 characters (to have a collision probability similar to UUID v4).
+
+```python
 import nanoid
-id = nanoid.generate()
+
+nanoid.generate() # => NDzkGoTCdRcaRyt7GOepg
 ```
 
-Change ID length
+Symbols `-,.()` are not encoded in the URL. If used at the end of a link they could be identified as a punctuation symbol.
 
-``` python
-id = nanoid.generate(size=3)
+If you want to reduce ID length (and increase collisions probability), you can pass the length as an argument.
+
+```python
+nanoid.generate(size=10) # => "IRFa-VaY2b"
+```
+Don’t forget to check the safety of your ID length in our ID collision probability calculator.
+
+## Custom Alphabet or Length
+
+If you want to change the ID's alphabet or length you can use the low-level generate module.
+
+```python
+from nanoid import generate
+
+generate('1234567890abcdef', 10) # => "4f90d13a42"
 ```
 
-Change ID alphabet
+Non-secure API is also available:
 
-``` python
-id = nanoid.generate(alphabet="1234567890abcdef")
+```python
+from nanoid import fast_generate
+
+fast_generate('1234567890abcdef', 10)
 ```
 
-Change ID length and alphabet
+## Tools
 
-``` python
-nanoid.generate(alphabet="1234567890abcdef", size=3)
-```
+* [ID size calculator](https://zelark.github.io/nano-id-cc/) to choice smaller ID size depends on your case.
+nanoid-dictionary with popular alphabets to use with nanoid/generate.
+* [`nanoid-dictionary`](https://github.com/aidarkhanov/nanoid-dictionary) with popular alphabets to use.
 
+## Other Programming Languages
 
-## Credits
-
-- [ai](https://github.com/ai) - [nanoid](https://github.com/ai/nanoid)
-
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE) for more information.
-
-## Change Log
-
-1. v0.3.0 - Fix array out of bound error.
+* [C#](https://github.com/codeyu/nanoid-net)
+* [Clojure and ClojureScript](https://github.com/zelark/nano-id)
+* [Crystal](https://github.com/mamantoha/nanoid.cr)
+* [Dart](https://github.com/pd4d10/nanoid)
+* [Go](https://github.com/matoous/go-nanoid)
+* [Elixir](https://github.com/railsmechanic/nanoid)
+* [Haskell](https://github.com/4e6/nanoid-hs)
+* [Java](https://github.com/aventrix/jnanoid)
+* [JavaScript](https://github.com/ai/nanoid) – original implementation.
+* [Nim](https://github.com/icyphox/nanoid.nim)
+* [PHP](https://github.com/hidehalo/nanoid-php)
+* [Ruby](https://github.com/radeno/nanoid.rb)
+* [Rust](https://github.com/nikolay-govorov/nanoid)
+* [Swift](https://github.com/antiflasher/NanoID)
