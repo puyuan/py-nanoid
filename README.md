@@ -9,7 +9,9 @@ A tiny, secure, URL-friendly, unique string ID generator for Python. Original im
 
 Install Nano ID using pip:
 
-`pip install nanoid`
+```
+pip install nanoid
+```
 
 ### Normal
 
@@ -43,9 +45,9 @@ generate('1234567890abcdef', 10) # => "4f90d13a42"
 Non-secure API is also available:
 
 ```python
-from nanoid import fast_generate
+from nanoid import non_secure_generate
 
-fast_generate('1234567890abcdef', 10)
+non_secure_generate('1234567890abcdef', 10)
 ```
 
 ## Tools
