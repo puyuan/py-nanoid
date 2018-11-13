@@ -7,7 +7,7 @@ from os import urandom
 from alphabet import alphabet
 
 
-def _complex_generate(alphabet, size):
+def generate(alphabet=alphabet, size=21):
     alphabet_len = len(alphabet)
 
     mask = 2
@@ -24,10 +24,6 @@ def _complex_generate(alphabet, size):
     )
 
     return ''.join(islice(filtered, size))
-
-
-def generate(alphabet=alphabet, size=21):
-    return _complex_generate(alphabet=alphabet, size=size)
 
 
 if __name__ == '__main__':
