@@ -5,7 +5,7 @@ from random import random
 from alphabet import alphabet
 
 
-def _non_secure_generate(alphabet, size):
+def non_secure_generate(alphabet=alphabet, size=21):
     alphabet_len = len(alphabet)
 
     return ''.join([
@@ -14,9 +14,5 @@ def _non_secure_generate(alphabet, size):
     ])
 
 
-def fast_generate(alphabet=alphabet, size=21):
-    return _non_secure_generate(alphabet=alphabet, size=size)
-
-
 if __name__ == '__main__':
-    print(fast_generate())
+    print(non_secure_generate())
