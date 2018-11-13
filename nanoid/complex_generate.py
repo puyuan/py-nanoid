@@ -1,9 +1,10 @@
 # coding: utf-8
 
-from alphabet import alphabet
 from itertools import islice
 from math import ceil, log
 from os import urandom
+
+from alphabet import alphabet
 
 
 def _complex_generate(alphabet, size):

@@ -1,7 +1,8 @@
 # coding: utf-8
 
-from alphabet import alphabet
 from random import random
+
+from alphabet import alphabet
 
 
 def _non_secure_generate(alphabet, size):
