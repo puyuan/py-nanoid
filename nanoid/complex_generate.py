@@ -4,7 +4,7 @@ from itertools import islice
 from math import ceil, log
 from os import urandom
 
-from alphabet import alphabet
+from resources import alphabet, size
 
 
 def generate(alphabet=alphabet, size=21):

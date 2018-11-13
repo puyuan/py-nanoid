@@ -2,10 +2,10 @@
 
 from random import random
 
-from alphabet import alphabet
+from resources import alphabet, size
 
 
-def non_secure_generate(alphabet=alphabet, size=21):
+def non_secure_generate(alphabet=alphabet, size=size):
     alphabet_len = len(alphabet)
 
     return ''.join([

@@ -4,8 +4,7 @@ from sys import maxsize
 from unittest import TestCase
 
 from nanoid import generate
-
-alphabet = '_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+from nanoid.resources import alphabet
 
 
 class TestNanoID(TestCase):
