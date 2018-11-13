@@ -34,7 +34,6 @@ class TestNanoID(TestCase):
 
         max = 0
         min = maxsize
-        print(chars)
         for k in chars:
             distribution = (chars[k] * len(alphabet)) / float((count * length))
             if distribution > max:
