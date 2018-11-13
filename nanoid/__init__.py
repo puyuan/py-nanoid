@@ -1,2 +1,2 @@
 from nanoid.complex_generate import generate
-from nanoid.non_secure_generate import fast_generate
+from nanoid.non_secure_generate import non_secure_generate
