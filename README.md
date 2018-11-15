@@ -2,7 +2,7 @@
 
 A tiny, secure, URL-friendly, unique string ID generator for Python.
 
-* __Safe__. It uses cryptographically strong random APIs and tests distribution of symbols.
+* __Safe__. It uses cryptographically strong random APIs and tests distribution of symbols;
 * __Compact__. It uses a larger alphabet than UUID (A-Za-z0-9_-). So ID size was reduced from 36 to 21 symbols.
 
 ## Usage
@@ -73,7 +73,7 @@ nanoid-dictionary with popular alphabets to use with nanoid/generate;
 * [JavaScript](https://github.com/ai/nanoid)
 * [Nim](https://github.com/icyphox/nanoid.nim)
 * [PHP](https://github.com/hidehalo/nanoid-php)
-* [Python](https://github.com/puyuan/py-nanoid) – alternative implementation.
+* [Python](https://github.com/puyuan/py-nanoid) – alternative implementation
 * [Ruby](https://github.com/radeno/nanoid.rb)
 * [Rust](https://github.com/nikolay-govorov/nanoid)
 * [Swift](https://github.com/antiflasher/NanoID)
