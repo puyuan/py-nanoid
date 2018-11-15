@@ -10,7 +10,7 @@ A tiny, secure, URL-friendly, unique string ID generator for Python.
 Install Nano ID using pip:
 
 ```
-pip install nanoid2
+pip install nanoid
 ```
 
 ### Normal
@@ -38,50 +38,26 @@ If you want to change the ID's alphabet or length you can use the internal gener
 
 ```python
 import nanoid
-import nanoid_dictionary
 
-nanoid.generate(nanoid_dictionary.human_alphabet, 10) # => "4f9zd13a42"
+nanoid.generate('1234567890abcdef', 10) # => "4f9zd13a42"
 ```
 
 Non-secure API is also available:
 
 ```python
 import nanoid.non_secure
-import nanoid_dictionary
 
-nanoid.non_secure.generate(nanoid_dictionary.alphabet_std, 10)
-```
-
-## Nano ID dictionary
-
-Nano ID dictionary has `alphabet_std` and `human_alphabet` alphabets.
-
-The dictionary also provides many useful sets of strings and functions to use: `lookalikes`, `lowercase`, `numbers`, `uppercase`, `prevent_misreadings(string, unsafe_chars)`.
-
-`prevent_misreadings(string, unsafe_chars)` accepts a string and removes all the characters that look similar. You can pass your own optional character set if you want.
-
-```python
-from nanoid_dictionary import *
-
-alphabet_std # => _-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
-human_alphabet # => _-23456789abcdefghijkmnpqrstuvwxyzABCDEFGHIJKMNPQRSTUVWXYZ
-
-lookalikes # => 1l0o
-lowercase # => abcdefghijklmnopqrstuvwxyz
-numbers # => 0123456789
-prevent_misreadings('a1l0o', lookalikes)) # => a
-uppercase # => ABCDEFGHIJKLMNOPQRSTUVWXYZ
+nanoid.non_secure.generate('1234567890abcdef', 10)
 ```
 
 ## Tools
 
 * [ID size calculator](https://zelark.github.io/nano-id-cc/) to choice smaller ID size depends on your case.
 nanoid-dictionary with popular alphabets to use with nanoid/generate.
-* [`nanoid-dictionary`](https://github.com/aidarkhanov/nanoid-dictionary) with popular alphabets to use.
+* [`nanoid-dictionary`](https://github.com/aidarkhanov/nanoid2) with popular alphabets to use.
 
 ## Thanks to
 * Andrey Sitnik for [Nano ID](https://github.com/ai/nanoid);
-* Stanislav Lashmanov for [Nano ID dictionary](https://github.com/CyberAP/nanoid-dictionary);
 * Aleksandr Zhuravlev for [ID collision probability](https://zelark.github.io/nano-id-cc/).
 
 ## Other Programming Languages
@@ -97,6 +73,7 @@ nanoid-dictionary with popular alphabets to use with nanoid/generate.
 * [JavaScript](https://github.com/ai/nanoid)
 * [Nim](https://github.com/icyphox/nanoid.nim)
 * [PHP](https://github.com/hidehalo/nanoid-php)
+* [Python](https://github.com/aidarkhanov/py-nanoid)
 * [Ruby](https://github.com/radeno/nanoid.rb)
 * [Rust](https://github.com/nikolay-govorov/nanoid)
 * [Swift](https://github.com/antiflasher/NanoID)
