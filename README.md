@@ -73,7 +73,7 @@ nanoid-dictionary with popular alphabets to use with nanoid/generate;
 * [JavaScript](https://github.com/ai/nanoid)
 * [Nim](https://github.com/icyphox/nanoid.nim)
 * [PHP](https://github.com/hidehalo/nanoid-php)
-* [Python](https://github.com/puyuan/py-nanoid) – alternative implementation
+* [Python](https://github.com/aidarkhanov/py-nanoid) – alternative implementation
 * [Ruby](https://github.com/radeno/nanoid.rb)
 * [Rust](https://github.com/nikolay-govorov/nanoid)
 * [Swift](https://github.com/antiflasher/NanoID)
