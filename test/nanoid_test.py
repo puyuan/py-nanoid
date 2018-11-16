@@ -60,7 +60,7 @@ class TestNanoID(TestCase):
 
     def test_non_secure_ids(self):
         for i in range(10000):
-            nanoid = non_secure_generate(secure=False)
+            nanoid = non_secure_generate()
             self.assertEqual(len(nanoid), 21)
 
     def test_non_secure_short_ids(self):
