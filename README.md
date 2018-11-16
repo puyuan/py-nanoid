@@ -54,7 +54,7 @@ nanoid.non_secure.generate('1234567890abcdef', 10)
 
 * [ID size calculator](https://zelark.github.io/nano-id-cc/) to choice smaller ID size depends on your case.
 nanoid-dictionary with popular alphabets to use with nanoid/generate;
-* [`nanoid-dictionary`](https://github.com/aidarkhanov/py-nanoid) with popular alphabets to use.
+* [`nanoid-dictionary`](https://github.com/aidarkhanov/py-nanoid-dictionary) with popular alphabets to use.
 
 ## Thanks to
 * Andrey Sitnik for [Nano ID](https://github.com/ai/nanoid);
