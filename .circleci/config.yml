@@ -49,7 +49,7 @@ jobs:
           command: |
             . venv/bin/activate
             py.test test
-            flake8 --max-line-length=99  nanoid test
+            flake8 --max-line-length=99  nanoid test setup.py
 
       - store_artifacts:
           path: test-reports

@@ -13,7 +13,7 @@ setup(
     long_description_content_type="text/markdown",
     url='https://github.com/puyuan/py-nanoid',
     license='MIT',
-    packages=['nanoid', 'nanoid.non_secure'],
+    packages=['nanoid'],
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
