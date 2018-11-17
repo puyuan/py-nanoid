@@ -1,8 +1,8 @@
 from setuptools import setup
 
-
 with open("README.md", "r") as f:
     long_description = f.read()
+
 setup(
     name='nanoid',
     version='2.0.0',
@@ -13,7 +13,7 @@ setup(
     long_description_content_type="text/markdown",
     url='https://github.com/puyuan/py-nanoid',
     license='MIT',
-    packages=['nanoid'],
+    packages=['nanoid', 'nanoid.non_secure'],
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',

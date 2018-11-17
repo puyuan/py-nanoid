@@ -1,21 +1,11 @@
-# coding: utf-8
-
 from sys import maxsize
 from unittest import TestCase
 
-from nanoid import generate, non_secure_generate
-from nanoid.resources import alphabet
+from nanoid import generate
 
 
-class TestNanoID(TestCase):
-    def test_generates_url_friendly_id(self):
-        for _ in range(10):
-            id = generate()
-            self.assertEqual(len(id), 21)
-            for j in range(len(id)):
-                self.assertIn(id[j], alphabet)
-
-    def test_flat_distribution(self):
+class TestGenerate(TestCase):
+    def test_has_flat_distribution(self):
         count = 100 * 1000
         length = 5
         alphabet = 'abcdefghijklmnopqrstuvwxyz'
@@ -50,20 +40,7 @@ class TestNanoID(TestCase):
             used[id] = True
 
     def test_has_options(self):
-        self.assertEqual(generate('a', 5), 'aaaaa')
-    
-
-    def test_short_secure_ids(self):
-        for i in range(10000):
-            nanoid = generate(alphabet="12345a", size=3)
-            self.assertEqual(len(nanoid), 3)
-
-    def test_non_secure_ids(self):
-        for i in range(10000):
-            nanoid = non_secure_generate()
-            self.assertEqual(len(nanoid), 21)
-
-    def test_non_secure_short_ids(self):
-        for i in range(10000):
-            nanoid = non_secure_generate(alphabet="12345a", size=3)
-            self.assertEqual(len(nanoid), 3)
+        count = 100 * 1000
+        for _ in range(count):
+            self.assertEqual(generate('a', 5), 'aaaaa')
+            self.assertEqual(len(generate(alphabet="12345a", size=3)), 3)

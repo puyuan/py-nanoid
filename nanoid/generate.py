@@ -1,30 +1,11 @@
 # coding: utf-8
+from __future__ import unicode_literals
+from __future__ import division
 
-from itertools import islice
-from math import ceil, log
-from os import urandom
-
-from nanoid import resources
-
-
-def generate(alphabet=resources.alphabet, size=resources.size):
-    alphabet_len = len(alphabet)
-
-    mask = 2
-    if alphabet_len > 1:
-        mask = (2 << int(log(alphabet_len - 1) / log(2))) - 1
-    step = int(ceil(1.6 * mask * size / alphabet_len))
-
-    random_bytes = bytearray(urandom(step))
-
-    filtered = (
-        alphabet[random_bytes[i] & mask]
-        for i in range(step)
-        if random_bytes[i] & mask < alphabet_len
-    )
-
-    return ''.join(islice(filtered, size))
+from nanoid.algorithm import algorithm_generate
+from nanoid.method import method
+from nanoid.resources import alphabet, size
 
 
-if __name__ == '__main__':
-    print(generate())
+def generate(alphabet=alphabet, size=size):
+    return method(algorithm_generate, alphabet, size)
