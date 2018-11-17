@@ -8,13 +8,6 @@ from nanoid.resources import alphabet
 
 
 class TestNanoID(TestCase):
-    def test_generates_url_friendly_id(self):
-        for _ in range(10):
-            id = generate()
-            self.assertEqual(len(id), 21)
-            for j in range(len(id)):
-                self.assertIn(id[j], alphabet)
-
     def test_flat_distribution(self):
         count = 100 * 1000
         length = 5
@@ -41,6 +34,13 @@ class TestNanoID(TestCase):
                 min = distribution
         self.assertLessEqual(max - min, 0.05)
 
+    def test_generates_url_friendly_id(self):
+        for _ in range(10):
+            id = generate()
+            self.assertEqual(len(id), 21)
+            for j in range(len(id)):
+                self.assertIn(id[j], alphabet)
+
     def test_has_no_collisions(self):
         count = 100 * 1000
         used = {}
@@ -52,11 +52,6 @@ class TestNanoID(TestCase):
     def test_has_options(self):
         self.assertEqual(generate('a', 5), 'aaaaa')
 
-    def test_short_secure_ids(self):
-        for i in range(10000):
-            nanoid = generate(alphabet="12345a", size=3)
-            self.assertEqual(len(nanoid), 3)
-
     def test_non_secure_ids(self):
         for i in range(10000):
             nanoid = non_secure_generate()
@@ -64,5 +59,10 @@ class TestNanoID(TestCase):
 
     def test_non_secure_short_ids(self):
         for i in range(10000):
-            nanoid = non_secure_generate(alphabet="12345a", size=3)
+            nanoid = non_secure_generate("12345a", 3)
+            self.assertEqual(len(nanoid), 3)
+
+    def test_short_secure_ids(self):
+        for i in range(10000):
+            nanoid = generate("12345a", 3)
             self.assertEqual(len(nanoid), 3)
