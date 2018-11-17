@@ -48,7 +48,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            py.test test.py
+            py.test test
             flake8 --max-line-length=99  nanoid.py  test.py
 
       - store_artifacts:
