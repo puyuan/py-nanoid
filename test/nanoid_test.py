@@ -51,7 +51,6 @@ class TestNanoID(TestCase):
 
     def test_has_options(self):
         self.assertEqual(generate('a', 5), 'aaaaa')
-    
 
     def test_short_secure_ids(self):
         for i in range(10000):

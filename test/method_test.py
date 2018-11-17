@@ -1,6 +1,5 @@
 # coding: utf-8
 
-from sys import maxsize
 from unittest import TestCase
 
 from nanoid.method import method

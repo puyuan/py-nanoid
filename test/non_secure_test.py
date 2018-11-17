@@ -2,7 +2,7 @@ from sys import maxsize
 from unittest import TestCase
 
 from nanoid import non_secure_generate
-from nanoid.resources import alphabet, size
+from nanoid.resources import alphabet
 
 
 class TestNonSecure(TestCase):
