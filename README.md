@@ -64,9 +64,7 @@ non_secure_generate('1234567890abcdef', 10)
 nanoid-dictionary with popular alphabets to use with nanoid/generate;
 * [`nanoid-dictionary`](https://github.com/aidarkhanov/py-nanoid-dictionary) with popular alphabets to use.
 
-## Thanks to
-* Andrey Sitnik for [Nano ID](https://github.com/ai/nanoid);
-* Aleksandr Zhuravlev for [ID collision probability](https://zelark.github.io/nano-id-cc/).
+
 
 ## Other Programming Languages
 
@@ -96,5 +94,7 @@ nanoid-dictionary with popular alphabets to use with nanoid/generate;
 
 ## Credits
 
-- [ai](https://github.com/ai) - [nanoid](https://github.com/ai/nanoid)
+- Andrey Sitnik for [Nano ID](https://github.com/ai/nanoid);
 - [aidarkhanov](https://github.com/aidarkhanov) - for main contribution to v2.0, and adding test cases.
+- Aleksandr Zhuravlev for [ID collision probability](https://zelark.github.io/nano-id-cc/).
+
