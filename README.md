@@ -45,17 +45,17 @@ Don’t forget to check the safety of your ID length in ID [collision probabilit
 If you want to change the ID's alphabet or length you can use the internal generate module.
 
 ```python
-import nanoid
+from nanoid import generate
 
-nanoid.generate('1234567890abcdef', 10) # => "4f9zd13a42"
+generate('1234567890abcdef', 10) # => "4f9zd13a42"
 ```
 
 Non-secure API is also available:
 
 ```python
-import nanoid.non_secure
+from nanoid import non_secure_generate
 
-nanoid.non_secure.generate('1234567890abcdef', 10)
+non_secure_generate('1234567890abcdef', 10)
 ```
 
 ## Tools
@@ -81,7 +81,6 @@ nanoid-dictionary with popular alphabets to use with nanoid/generate;
 * [JavaScript](https://github.com/ai/nanoid)
 * [Nim](https://github.com/icyphox/nanoid.nim)
 * [PHP](https://github.com/hidehalo/nanoid-php)
-* [Python](https://github.com/aidarkhanov/py-nanoid) – alternative implementation
 * [Ruby](https://github.com/radeno/nanoid.rb)
 * [Rust](https://github.com/nikolay-govorov/nanoid)
 * [Swift](https://github.com/antiflasher/NanoID)
