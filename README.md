@@ -4,21 +4,22 @@
 
 A tiny, secure, URL-friendly, unique string ID generator for Python.
 
-* __Safe__. It uses cryptographically strong random APIs and tests distribution of symbols;
+* __Safe__. It uses cryptographically strong random APIs and tests distribution of symbols.
 * __Compact__. It uses a larger alphabet than UUID (A-Za-z0-9_-). So ID size was reduced from 36 to 21 symbols.
 
-## Usage
 
-Install Nano ID using pip:
+## Installation
 
-```
+```sh
 pip install nanoid
 ```
+
+
+## Usage
 
 ### Normal
 
 The main module uses URL-friendly symbols (A-Za-z0-9_-) and returns an ID with 21 characters (to have a collision probability similar to UUID v4).
-
 
 ```python
 from nanoid import generate
@@ -58,12 +59,12 @@ from nanoid import non_secure_generate
 non_secure_generate('1234567890abcdef', 10)
 ```
 
+
 ## Tools
 
 * [ID size calculator](https://zelark.github.io/nano-id-cc/) to choice smaller ID size depends on your case.
-nanoid-dictionary with popular alphabets to use with nanoid/generate;
+nanoid-dictionary with popular alphabets to use with nanoid/generate.
 * [`nanoid-dictionary`](https://github.com/aidarkhanov/py-nanoid-dictionary) with popular alphabets to use.
-
 
 
 ## Other Programming Languages
@@ -86,15 +87,15 @@ nanoid-dictionary with popular alphabets to use with nanoid/generate;
 
 ## Changelog
 - v2.0.0
-    - Replace ~ to - in default alphabet
-    - Add non-secure fast generator
-    - Reduce default characters from 22 to 21
+    - Replace ~ to - in default alphabet.
+    - Add non-secure fast generator.
+    - Reduce default characters from 22 to 21.
 - v0.3.0
     - Fix array out of bound error.
 
+
 ## Credits
 
-- Andrey Sitnik for [Nano ID](https://github.com/ai/nanoid);
+- Andrey Sitnik for [Nano ID](https://github.com/ai/nanoid).
 - [Dair Aidarkhanov](https://github.com/aidarkhanov) for main contribution to v2.0, and adding test cases.
 - Aleksandr Zhuravlev for [ID collision probability](https://zelark.github.io/nano-id-cc/).
-
