@@ -7,7 +7,7 @@ from math import ceil, log
 def method(algorithm, alphabet, size):
     alphabet_len = len(alphabet)
 
-    mask = 2
+    mask = 1
     if alphabet_len > 1:
         mask = (2 << int(log(alphabet_len - 1) / log(2))) - 1
     step = int(ceil(1.6 * mask * size / alphabet_len))
