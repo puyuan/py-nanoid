@@ -35,7 +35,6 @@ If you want to reduce ID length (and increase collisions probability), you can p
 from nanoid import generate
 
 generate(size=10) # => "IRFa-VaY2b"
-
 ```
 
 Don’t forget to check the safety of your ID length in ID [collision probability calculator](https://zelark.github.io/nano-id-cc/).
@@ -64,7 +63,7 @@ non_secure_generate('1234567890abcdef', 10)
 
 * [ID size calculator](https://zelark.github.io/nano-id-cc/) to choice smaller ID size depends on your case.
 nanoid-dictionary with popular alphabets to use with nanoid/generate.
-* [`nanoid-dictionary`](https://github.com/aidarkhanov/py-nanoid-dictionary) with popular alphabets to use.
+* [`nanoid-dictionary`](https://pypi.org/project/nanoid-dictionary/) with popular alphabets to use.
 
 
 ## Other Programming Languages
