@@ -1,2 +1,4 @@
-alphabet = '_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+import string
+
+alphabet = f'_-{string.digits}{string.ascii_letters}'
 size = 21
