@@ -1,11 +1,12 @@
 from unittest import TestCase
+from typing import Dict
 
 from nanoid.algorithm import algorithm_generate
 
 
 class TestAlgorithm(TestCase):
-    def test_generates_random_buffers(self):
-        numbers = {}
+    def test_generates_random_buffers(self) -> None:
+        numbers: Dict[int, int] = {}
         random_bytes = algorithm_generate(10000)
         self.assertEqual(len(random_bytes), 10000)
         for i in range(len(random_bytes)):
@@ -16,5 +17,5 @@ class TestAlgorithm(TestCase):
             self.assertLessEqual(random_bytes[i], 255)
             self.assertGreaterEqual(random_bytes[i], 0)
 
-    def test_generates_small_random_buffers(self):
+    def test_generates_small_random_buffers(self) -> None:
         self.assertEqual(len(algorithm_generate(10)), 10)

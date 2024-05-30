@@ -2,18 +2,19 @@
 
 from sys import maxsize
 from unittest import TestCase
+from typing import Dict
 
 from nanoid import generate, non_secure_generate
 from nanoid.resources import alphabet
 
 
 class TestNanoID(TestCase):
-    def test_flat_distribution(self):
+    def test_flat_distribution(self) -> None:
         count = 100 * 1000
         length = 5
         alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
-        chars = {}
+        chars: Dict[str, int] = {}
         for _ in range(count):
             id = generate(alphabet, length)
             for j in range(len(id)):
@@ -24,8 +25,8 @@ class TestNanoID(TestCase):
 
         self.assertEqual(len(chars.keys()), len(alphabet))
 
-        max = 0
-        min = maxsize
+        max: float = 0
+        min: float = maxsize
         for k in chars:
             distribution = (chars[k] * len(alphabet)) / float((count * length))
             if distribution > max:
@@ -34,14 +35,14 @@ class TestNanoID(TestCase):
                 min = distribution
         self.assertLessEqual(max - min, 0.05)
 
-    def test_generates_url_friendly_id(self):
+    def test_generates_url_friendly_id(self) -> None:
         for _ in range(10):
             id = generate()
             self.assertEqual(len(id), 21)
             for j in range(len(id)):
                 self.assertIn(id[j], alphabet)
 
-    def test_has_no_collisions(self):
+    def test_has_no_collisions(self) -> None:
         count = 100 * 1000
         used = {}
         for _ in range(count):
@@ -49,20 +50,20 @@ class TestNanoID(TestCase):
             self.assertIsNotNone(id in used)
             used[id] = True
 
-    def test_has_options(self):
+    def test_has_options(self) -> None:
         self.assertEqual(generate('a', 5), 'aaaaa')
 
-    def test_non_secure_ids(self):
+    def test_non_secure_ids(self) -> None:
         for i in range(10000):
             nanoid = non_secure_generate()
             self.assertEqual(len(nanoid), 21)
 
-    def test_non_secure_short_ids(self):
+    def test_non_secure_short_ids(self) -> None:
         for i in range(10000):
             nanoid = non_secure_generate("12345a", 3)
             self.assertEqual(len(nanoid), 3)
 
-    def test_short_secure_ids(self):
+    def test_short_secure_ids(self) -> None:
         for i in range(10000):
             nanoid = generate("12345a", 3)
             self.assertEqual(len(nanoid), 3)

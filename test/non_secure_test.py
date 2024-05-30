@@ -1,26 +1,27 @@
 from sys import maxsize
 from unittest import TestCase
+from typing import Dict
 
 from nanoid import non_secure_generate
 from nanoid.resources import alphabet
 
 
 class TestNonSecure(TestCase):
-    def test_changes_id_length(self):
+    def test_changes_id_length(self) -> None:
         self.assertEqual(len(non_secure_generate(size=10)), 10)
 
-    def test_generates_url_friendly_id(self):
+    def test_generates_url_friendly_id(self) -> None:
         for _ in range(10):
             id = non_secure_generate()
             self.assertEqual(len(id), 21)
             for j in range(len(id)):
                 self.assertNotEqual(alphabet.find(id[j]), -1)
 
-    def test_has_flat_distribution(self):
+    def test_has_flat_distribution(self) -> None:
         count = 100 * 1000
         length = len(non_secure_generate())
 
-        chars = {}
+        chars: Dict[str, int] = {}
         for _ in range(count):
             id = non_secure_generate()
             for j in range(len(id)):
@@ -31,8 +32,8 @@ class TestNonSecure(TestCase):
 
         self.assertEqual(len(chars.keys()), len(alphabet))
 
-        max = 0
-        min = maxsize
+        max: float = 0
+        min: float = maxsize
         for k in chars:
             distribution = (chars[k] * len(alphabet)) / float((count * length))
             if distribution > max:
@@ -41,7 +42,7 @@ class TestNonSecure(TestCase):
                 min = distribution
         self.assertLessEqual(max - min, 0.05)
 
-    def test_has_no_collisions(self):
+    def test_has_no_collisions(self) -> None:
         count = 100 * 1000
         used = {}
         for _ in range(count):

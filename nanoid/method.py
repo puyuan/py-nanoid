@@ -3,10 +3,10 @@ from __future__ import unicode_literals
 from __future__ import division
 
 from math import ceil, log
-from typing import Callable
+from typing import Callable, List
 
 
-Algorithm = Callable[[int], bytearray]
+Algorithm = Callable[[int], bytearray | List[int]]
 
 
 def method(algorithm: Algorithm, alphabet: str, size: int) -> str:

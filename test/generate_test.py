@@ -1,16 +1,17 @@
 from sys import maxsize
 from unittest import TestCase
+from typing import Dict
 
 from nanoid import generate
 
 
 class TestGenerate(TestCase):
-    def test_has_flat_distribution(self):
+    def test_has_flat_distribution(self) -> None:
         count = 100 * 1000
         length = 5
         alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
-        chars = {}
+        chars: Dict[str, int] = {}
         for _ in range(count):
             id = generate(alphabet, length)
             for j in range(len(id)):
@@ -21,8 +22,8 @@ class TestGenerate(TestCase):
 
         self.assertEqual(len(chars.keys()), len(alphabet))
 
-        max = 0
-        min = maxsize
+        max: float = 0
+        min: float = maxsize
         for k in chars:
             distribution = (chars[k] * len(alphabet)) / float((count * length))
             if distribution > max:
@@ -31,7 +32,7 @@ class TestGenerate(TestCase):
                 min = distribution
         self.assertLessEqual(max - min, 0.05)
 
-    def test_has_no_collisions(self):
+    def test_has_no_collisions(self) -> None:
         count = 100 * 1000
         used = {}
         for _ in range(count):
@@ -39,7 +40,7 @@ class TestGenerate(TestCase):
             self.assertIsNotNone(id in used)
             used[id] = True
 
-    def test_has_options(self):
+    def test_has_options(self) -> None:
         count = 100 * 1000
         for _ in range(count):
             self.assertEqual(generate('a', 5), 'aaaaa')

@@ -4,9 +4,9 @@ from nanoid.resources import alphabet
 
 
 class TestURL(TestCase):
-    def test_has_no_duplicates(self):
+    def test_has_no_duplicates(self) -> None:
         for i in range(len(alphabet)):
             self.assertEqual(alphabet.rindex(alphabet[i]), i)
 
-    def test_is_string(self):
+    def test_is_string(self) -> None:
         self.assertEqual(type(alphabet), str)
