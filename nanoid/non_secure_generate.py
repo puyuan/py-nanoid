@@ -1,4 +1,5 @@
 # coding: utf-8
+from __future__ import annotations
 from __future__ import unicode_literals
 from __future__ import division
 
@@ -7,7 +8,7 @@ from random import random
 from nanoid.resources import alphabet, size
 
 
-def non_secure_generate(alphabet=alphabet, size=size):
+def non_secure_generate(alphabet: str = alphabet, size: int = size) -> str:
     alphabet_len = len(alphabet)
 
     id = ''

@@ -1,10 +1,15 @@
+from __future__ import annotations
 from __future__ import unicode_literals
 from __future__ import division
 
 from math import ceil, log
+from typing import Callable
 
 
-def method(algorithm, alphabet, size):
+Algorithm = Callable[[int], bytearray]
+
+
+def method(algorithm: Algorithm, alphabet: str, size: int) -> str:
     alphabet_len = len(alphabet)
 
     mask = 1
