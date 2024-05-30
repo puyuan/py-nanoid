@@ -1,12 +1,11 @@
-from __future__ import annotations
 from __future__ import unicode_literals
 from __future__ import division
 
 from math import ceil, log
-from typing import Callable, List
+from typing import Callable, List, Union
 
 
-Algorithm = Callable[[int], bytearray | List[int]]
+Algorithm = Callable[[int], Union[bytearray, List[int]]]
 
 
 def method(algorithm: Algorithm, alphabet: str, size: int) -> str:
