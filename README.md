@@ -85,6 +85,8 @@ nanoid-dictionary with popular alphabets to use with nanoid/generate.
 
 
 ## Changelog
+- v2.1.0
+    - Add typing support.
 - v2.0.0
     - Replace ~ to - in default alphabet.
     - Add non-secure fast generator.
@@ -98,3 +100,4 @@ nanoid-dictionary with popular alphabets to use with nanoid/generate.
 - Andrey Sitnik for [Nano ID](https://github.com/ai/nanoid).
 - [Dair Aidarkhanov](https://github.com/aidarkhanov) for main contribution to v2.0, and adding test cases.
 - Aleksandr Zhuravlev for [ID collision probability](https://zelark.github.io/nano-id-cc/).
+- [Oliver Lambson](https://github.com/oliverlambson) for adding typing support.
