@@ -2,10 +2,11 @@ from __future__ import unicode_literals
 from __future__ import division
 
 from math import ceil, log
-from typing import Callable, List, Union
+from typing import Callable, Sequence
+from typing_extensions import TypeAlias
 
 
-Algorithm = Callable[[int], Union[bytearray, List[int]]]
+Algorithm: TypeAlias = Callable[[int], Sequence[int]]
 
 
 def method(algorithm: Algorithm, alphabet: str, size: int) -> str:
@@ -16,7 +17,7 @@ def method(algorithm: Algorithm, alphabet: str, size: int) -> str:
         mask = (2 << int(log(alphabet_len - 1) / log(2))) - 1
     step = int(ceil(1.6 * mask * size / alphabet_len))
 
-    id = ''
+    id = ""
     while True:
         random_bytes = algorithm(step)
 
