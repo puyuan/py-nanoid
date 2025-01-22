@@ -75,7 +75,7 @@ nanoid-dictionary with popular alphabets to use with nanoid/generate.
 * [Go](https://github.com/matoous/go-nanoid)
 * [Elixir](https://github.com/railsmechanic/nanoid)
 * [Haskell](https://github.com/4e6/nanoid-hs)
-* [Java](https://github.com/aventrix/jnanoid)
+* [Java](https://github.com/wosherco/jnanoid-enhanced)
 * [JavaScript](https://github.com/ai/nanoid)
 * [Nim](https://github.com/icyphox/nanoid.nim)
 * [PHP](https://github.com/hidehalo/nanoid-php)
