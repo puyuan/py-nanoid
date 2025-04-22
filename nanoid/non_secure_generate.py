@@ -8,6 +8,11 @@ from nanoid.resources import alphabet, size
 
 
 def non_secure_generate(alphabet=alphabet, size=size):
+    if not isinstance(size, int):
+        raise ValueError("Size must be an integer")
+    if size < 1:
+        raise ValueError("Size must be a positive integer")
+
     alphabet_len = len(alphabet)
 
     id = ''

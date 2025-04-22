@@ -8,4 +8,8 @@ from nanoid.resources import alphabet, size
 
 
 def generate(alphabet=alphabet, size=size):
+    if not isinstance(size, int):
+        raise ValueError("Size must be an integer")
+    if size < 1:
+        raise ValueError("Size must be a positive integer")
     return method(algorithm_generate, alphabet, size)
