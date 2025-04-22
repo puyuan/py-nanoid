@@ -48,3 +48,9 @@ class TestNonSecure(TestCase):
             id = non_secure_generate()
             self.assertIsNotNone(id in used)
             used[id] = True
+
+    def test_rejects_invalid_fractional_and_negative_sizes(self):
+        invalid_sizes = [-2.3, -1, -100, 0, 12.5, 3.999, -0.01]
+        for value in invalid_sizes:
+            with self.assertRaises(ValueError):
+                non_secure_generate(size=value)
