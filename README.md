@@ -1,6 +1,7 @@
 # Nano ID
 
 [![CircleCI](https://circleci.com/gh/puyuan/py-nanoid/tree/master.svg?style=svg)](https://circleci.com/gh/puyuan/py-nanoid/tree/master)
+[![Tests](https://github.com/puyuan/py-nanoid/actions/workflows/tests.yml/badge.svg)](https://github.com/puyuan/py-nanoid/actions/workflows/tests.yml)
 
 A tiny, secure, URL-friendly, unique string ID generator for Python.
 
@@ -49,6 +50,13 @@ from nanoid import generate
 
 generate('1234567890abcdef', 10) # => "4f9zd13a42"
 ```
+
+`generate` returns an empty string for size zero and rejects fractional,
+negative or non-finite sizes, and empty alphabets for positive sizes, with
+`ValueError`. Integral floats remain accepted. PEP 561 type stubs are included.
+
+For a letters-only alphabet, use `generate(string.ascii_letters, 21)` after
+`import string`.
 
 Non-secure API is also available:
 

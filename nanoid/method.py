@@ -5,7 +5,24 @@ from math import ceil, log
 
 
 def method(algorithm, alphabet, size):
+    # Integral floats previously worked here; retain that behavior while rejecting
+    # fractional/non-finite values before the rejection-sampling loop (#34).
+    from numbers import Integral, Real
+    from math import isinf, isnan
+
+    if not isinstance(size, Integral):
+        if (not isinstance(size, Real) or not size >= 0 or isinf(size)
+                or isnan(size) or size != int(size)):
+            raise ValueError('size must be a non-negative integer')
+        size = int(size)
+    if size < 0:
+        raise ValueError('size must be a non-negative integer')
+    if size == 0:
+        return ''
+
     alphabet_len = len(alphabet)
+    if not alphabet_len:
+        raise ValueError('alphabet must not be empty')
 
     mask = 1
     if alphabet_len > 1:

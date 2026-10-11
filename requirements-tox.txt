@@ -1,0 +1,6 @@
+# Resolve the newest driver compatible with each interpreter.
+tox
+# Later releases require filelock versions unavailable on Python 2.7.
+virtualenv<20.9; python_version < '3'
+# New virtualenv releases cannot create Python <3.8 environments.
+virtualenv<20.22; python_version >= '3' and python_version < '3.8'

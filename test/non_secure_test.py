@@ -8,6 +8,9 @@ from nanoid.resources import alphabet
 class TestNonSecure(TestCase):
     def test_changes_id_length(self):
         self.assertEqual(len(non_secure_generate(size=10)), 10)
+        self.assertEqual(non_secure_generate('', 0), '')
+        self.assertEqual(non_secure_generate('a', -1), '')
+        self.assertEqual(non_secure_generate(['a'], 3), 'aaa')
 
     def test_generates_url_friendly_id(self):
         for _ in range(10):
@@ -46,5 +49,12 @@ class TestNonSecure(TestCase):
         used = {}
         for _ in range(count):
             id = non_secure_generate()
-            self.assertIsNotNone(id in used)
+            self.assertNotIn(id, used)
             used[id] = True
+
+    def test_custom_alphabet(self):
+        for _ in range(10):
+            identifier = non_secure_generate('12345a', 3)
+            self.assertEqual(len(identifier), 3)
+            for character in identifier:
+                self.assertIn(character, '12345a')

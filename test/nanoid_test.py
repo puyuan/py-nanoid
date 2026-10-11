@@ -46,7 +46,7 @@ class TestNanoID(TestCase):
         used = {}
         for _ in range(count):
             id = generate()
-            self.assertIsNotNone(id in used)
+            self.assertNotIn(id, used)
             used[id] = True
 
     def test_has_options(self):

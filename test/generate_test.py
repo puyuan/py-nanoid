@@ -36,7 +36,7 @@ class TestGenerate(TestCase):
         used = {}
         for _ in range(count):
             id = generate()
-            self.assertIsNotNone(id in used)
+            self.assertNotIn(id, used)
             used[id] = True
 
     def test_has_options(self):
@@ -44,3 +44,8 @@ class TestGenerate(TestCase):
         for _ in range(count):
             self.assertEqual(generate('a', 5), 'aaaaa')
             self.assertEqual(len(generate(alphabet="12345a", size=3)), 3)
+
+    def test_edge_case_sizes_and_sequence_alphabets(self):
+        self.assertEqual(generate(size=0), '')
+        self.assertEqual(generate('a', 3.0), 'aaa')
+        self.assertEqual(generate(['a'], 3), 'aaa')

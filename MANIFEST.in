@@ -1,1 +1,3 @@
-include LICENSE README.md
+include LICENSE README.md tox.ini requirements.txt requirements-tox.txt
+recursive-include test *.py
+recursive-include nanoid *.pyi py.typed

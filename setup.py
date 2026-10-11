@@ -20,5 +20,6 @@ setup(
         'Operating System :: OS Independent',
         'Topic :: Utilities'
     ],
+    package_data={'nanoid': ['*.pyi', 'py.typed']},
     zip_safe=False
 )
